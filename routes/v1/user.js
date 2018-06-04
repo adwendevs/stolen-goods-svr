@@ -15,8 +15,9 @@ const router = express.Router();
 
 router.post("/sign_up", async (req, res) => {
     const { email, password, name } = req.body;
-    //validate with validator (see package.json)
-    //save to mongodb
+    // 1. validate with validator (see package.json)
+    // 2. hash password (see core/secure for passwordHash())
+    // 3. save to mongodb
     res.status(201).json(util.createJsonMessage({
         code: 200,
         message: ""
@@ -25,8 +26,9 @@ router.post("/sign_up", async (req, res) => {
 
 router.post("/create_token", async (req, res) => {
     const { email, password } = req.body;
-    // validate email and password (see "validator" in package.json)
-    // fetch user from db and generate token
+    // 1. validate email and password (see "validator" in package.json)
+    // 2. fetch user from db
+    // 3. generate token (see core/secure for createTokenString())
     res.status(201).json(util.createJsonMessage({
         code: 200,
         data: {

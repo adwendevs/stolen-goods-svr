@@ -57,7 +57,7 @@ class Logger {
         switch (type) {
             case this.logTypes.CRITICAL_ERROR:
                 // TODO: Emergency logging with SMS notification after logging
-                // messenger.sendSMS(...)
+                // messenger.sendSMS(...) (with core/messenger)
                 break;
 
             default:
